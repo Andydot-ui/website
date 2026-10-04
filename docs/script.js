@@ -34,3 +34,22 @@ const observer = new IntersectionObserver(
   { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
 );
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+// 首屏内容随滚动淡出
+const heroInner = document.querySelector('.hero-inner');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (heroInner && !reducedMotion) {
+  const fadeHero = () => {
+    const progress = Math.min(1, window.scrollY / (window.innerHeight * 0.55));
+    if (progress <= 0) {
+      // 顶部时清掉内联样式，避免合成层让渐变文字渲染异常
+      heroInner.style.opacity = '';
+      heroInner.style.transform = '';
+    } else {
+      heroInner.style.opacity = String(1 - progress);
+      heroInner.style.transform = `translateY(${progress * -64}px)`;
+    }
+  };
+  fadeHero();
+  window.addEventListener('scroll', fadeHero, { passive: true });
+}

@@ -14,8 +14,6 @@
   --accent-hover: #0077ed;
   --link: #0066cc;
   --border: #d2d2d7;
-  --nav-bg: rgba(255, 255, 255, 0.72);
-  --nav-border: rgba(0, 0, 0, 0.08);
   --radius-card: 28px;
   --radius-btn: 980px;
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro SC", "SF Pro Display",
@@ -38,8 +36,6 @@
     --accent-hover: #409cff;
     --link: #2997ff;
     --border: #424245;
-    --nav-bg: rgba(22, 22, 23, 0.8);
-    --nav-border: rgba(255, 255, 255, 0.12);
   }
 }
 
@@ -97,26 +93,28 @@ img, svg { display: block; }
 }
 .btn-ghost:hover { text-decoration: underline; }
 
-/* ---------- 导航 ---------- */
+/* ---------- 导航（首屏上透明悬浮，滚过后变实色条） ---------- */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 50;
-  background: var(--nav-bg);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
+  background: transparent;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+  transition: background 0.35s var(--ease), border-color 0.35s var(--ease),
+    -webkit-backdrop-filter 0.35s var(--ease), backdrop-filter 0.35s var(--ease);
 }
 .nav.scrolled {
-  border-bottom-color: var(--nav-border);
+  background: rgba(14, 18, 22, 0.92);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
 .nav-inner {
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 22px;
-  height: 48px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -129,6 +127,7 @@ img, svg { display: block; }
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.022em;
+  color: #fff;
 }
 .nav-logo img {
   border-radius: 6px;
@@ -142,11 +141,10 @@ img, svg { display: block; }
 }
 .nav-links a {
   font-size: 14px;
-  color: var(--fg);
-  opacity: 0.85;
-  transition: opacity 0.25s var(--ease);
+  color: rgba(255, 255, 255, 0.88);
+  transition: opacity 0.25s var(--ease), color 0.25s var(--ease);
 }
-.nav-links a:hover { opacity: 1; }
+.nav-links a:hover { color: #fff; }
 
 .nav-toggle {
   display: none;
@@ -164,7 +162,7 @@ img, svg { display: block; }
   width: 18px;
   height: 1.5px;
   margin: 0 auto;
-  background: var(--fg);
+  background: #fff;
   transition: transform 0.3s var(--ease);
 }
 .nav-toggle.open span:nth-child(1) { transform: translateY(3.75px) rotate(45deg); }
@@ -186,11 +184,18 @@ img, svg { display: block; }
   /* 背景图为深色调，首屏文字固定使用浅色 */
 }
 
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero-eyebrow {
   font-size: 19px;
   font-weight: 600;
   color: #6fb6ff;
   margin-bottom: 14px;
+  letter-spacing: normal;
 }
 
 .hero h1 {
@@ -198,16 +203,24 @@ img, svg { display: block; }
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: #ffffff;
-  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55);
+  /* 中文行尾标点会让居中文本看起来偏左，用等宽内边距补偿 */
+  padding-left: 0.35em;
+  background: linear-gradient(180deg, #ffffff 25%, rgba(255, 255, 255, 0.6) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
 }
 
 .hero-sub {
   margin-top: 22px;
   font-size: clamp(19px, 2.6vw, 24px);
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.4;
+  letter-spacing: normal;
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  padding-left: 0.35em;
 }
 
 .hero-links {
@@ -539,15 +552,15 @@ img, svg { display: block; }
 
   .nav-links {
     position: absolute;
-    top: 48px;
+    top: 56px;
     left: 0;
     right: 0;
     flex-direction: column;
     gap: 0;
-    background: var(--nav-bg);
+    background: rgba(14, 18, 22, 0.95);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid var(--nav-border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.35s var(--ease);
