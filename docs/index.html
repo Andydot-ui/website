@@ -15,6 +15,7 @@
 /* ===== Reset & Variables ===== */
 :root {
   --bg: #0a0a0a;
+  --bg-rgb: 10, 10, 10;
   --bg-elevated: #111111;
   --bg-hover: #1f2428;
   --border: #27272a;
@@ -33,6 +34,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --bg: #fafafa;
+    --bg-rgb: 250, 250, 250;
     --fg: #18181b;
     --fg-muted: #71717a;
     --accent: #18181b;
@@ -120,13 +122,12 @@ p { color: #a1a1aa; line-height: 1.7; }
   padding: 140px 0 100px;
   text-align: center;
   overflow: hidden;
-  isolation: isolate;
 }
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   background-image: url("images/hero-bg.png");
   background-size: cover;
   background-position: center;
@@ -139,6 +140,10 @@ p { color: #a1a1aa; line-height: 1.7; }
     opacity: 0.1;
     filter: saturate(0.6) brightness(1.1);
   }
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 .hero-logo {
   width: 80px;
@@ -465,8 +470,40 @@ footer { border-top: 1px solid #27272a; padding: 48px 0 32px; }
 </footer>
 
 <script>
+/* ===== Header Scroll Hide/Show ===== */
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
+const headerHeight = header.offsetHeight;
+
+function handleScroll() {
+  const currentScrollY = window.scrollY;
+  
+  if (currentScrollY > lastScrollY && currentScrollY > headerHeight) {
+    header.style.transform = 'translateY(-100%)';
+  } else if (currentScrollY < lastScrollY) {
+    header.style.transform = 'translateY(0)';
+  }
+  
+  lastScrollY = currentScrollY;
+}
+
+// Debounce scroll handler
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  if (scrollTimeout) clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(handleScroll, 10);
+});
+
+// Initialize header height
+let headerHeight = header.offsetHeight;
+window.addEventListener('resize', () => {
+  headerHeight = header.offsetHeight;
+});
+
+// Smooth transition for header
+header.style.transition = 'transform 0.3s ease, background 0.2s, border-color 0.2s';
+
 /* ===== Lightbox ===== */
-const lightbox = document.getElementById('lightbox');
 const lbImg = document.getElementById('lightbox-img');
 const screenshots = document.querySelectorAll('.screenshot');
 let currentIndex = 0;
