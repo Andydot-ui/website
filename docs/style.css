@@ -136,7 +136,9 @@ img, svg { display: block; }
   font-weight: 600;
   letter-spacing: -0.022em;
 }
-.nav-logo svg { color: var(--accent); }
+.nav-logo img {
+  border-radius: 6px;
+}
 
 .nav-links {
   display: flex;
@@ -447,33 +449,6 @@ img, svg { display: block; }
 }
 .about-body p + p { margin-top: 26px; }
 
-.about-links {
-  margin-top: 48px;
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-}
-.about-links a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--link);
-  font-size: 17px;
-}
-.about-links a:hover { text-decoration: underline; }
-
-.about-bilibili,
-.nav-bilibili img {
-  border-radius: 6px;
-  display: inline-block;
-  vertical-align: -3px;
-}
-.nav-bilibili {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
 /* ---------- 页脚 ---------- */
 .footer {
   background: var(--bg-alt);
@@ -502,6 +477,25 @@ img, svg { display: block; }
   color: var(--fg-muted);
 }
 .footer-col a:hover { color: var(--fg); text-decoration: underline; }
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 6px;
+}
+.footer-social a {
+  color: var(--fg-muted);
+  transition: color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.footer-social a:hover {
+  color: var(--fg);
+  transform: translateY(-2px);
+}
+.footer-social img {
+  border-radius: 7px;
+  display: block;
+}
 
 .footer-legal {
   padding-top: 24px;

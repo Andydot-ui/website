@@ -23,9 +23,7 @@
 <header class="nav" id="nav">
   <nav class="nav-inner" aria-label="主导航">
     <a class="nav-logo" href="#top" aria-label="Andydot 首页">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-        <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/>
-      </svg>
+      <img src="images/logo.png" alt="" width="22" height="22">
       Andydot
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
@@ -34,8 +32,6 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#work">项目</a></li>
       <li><a href="#about">关于</a></li>
-      <li><a href="https://github.com/Andydot-ui" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a class="nav-bilibili" href="https://space.bilibili.com/1205310818" target="_blank" rel="noopener"><img src="images/bilibili.png" alt="" width="18" height="18">哔哩哔哩</a></li>
     </ul>
   </nav>
 </header>
@@ -107,24 +103,6 @@
   <div class="about-body reveal">
     <p>我是 Andydot，一名高中生，也是一名独立开发者。我专注于简单、好玩、实用的小工具开发，相信好的工具应当像空气一样——存在，却不打扰。我坚持干净的设计、扎实的工程和克制的功能取舍。</p>
     <p>该有的全都有，不该有的一样也没有。</p>
-    <div class="about-links">
-      <a href="https://github.com/Andydot-ui" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub
-      </a>
-      <a href="mailto:andydot@qq.com">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-        联系我
-      </a>
-      <a href="https://space.bilibili.com/1205310818" target="_blank" rel="noopener">
-        <img class="about-bilibili" src="images/bilibili.png" alt="" width="20" height="20">
-        哔哩哔哩
-      </a>
-      <a href="https://www.qrz.com/db/BD6KGB" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 10v11"/><circle cx="12" cy="8" r="2.2"/><path d="M7.8 12.2a6 6 0 0 1 0-8.4M16.2 3.8a6 6 0 0 1 0 8.4M4.9 15.1a10 10 0 0 1 0-14.2M19.1 0.9a10 10 0 0 1 0 14.2"/></svg>
-        QRZ 主页
-      </a>
-    </div>
   </div>
 </section>
 
@@ -140,11 +118,21 @@
         <a href="https://github.com/Andydot-ui/Vchange" target="_blank" rel="noopener">Vchange on GitHub</a>
       </div>
       <div class="footer-col">
-        <h4>连接</h4>
-        <a href="https://github.com/Andydot-ui" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://space.bilibili.com/1205310818" target="_blank" rel="noopener">哔哩哔哩</a>
-        <a href="https://www.qrz.com/db/BD6KGB" target="_blank" rel="noopener">QRZ 主页</a>
-        <a href="mailto:andydot@qq.com">邮件联系</a>
+        <h4>找到我</h4>
+        <div class="footer-social">
+          <a href="https://github.com/Andydot-ui" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          </a>
+          <a href="https://space.bilibili.com/1205310818" target="_blank" rel="noopener" aria-label="哔哩哔哩" title="哔哩哔哩">
+            <img src="images/logo.png" alt="" width="24" height="24">
+          </a>
+          <a href="https://www.qrz.com/db/BD6KGB" target="_blank" rel="noopener" aria-label="QRZ 主页" title="QRZ 主页">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 10v11"/><circle cx="12" cy="8" r="2.2"/><path d="M7.8 12.2a6 6 0 0 1 0-8.4M16.2 3.8a6 6 0 0 1 0 8.4M4.9 15.1a10 10 0 0 1 0-14.2M19.1 0.9a10 10 0 0 1 0 14.2"/></svg>
+          </a>
+          <a href="mailto:andydot@qq.com" aria-label="邮件联系" title="邮件联系">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="footer-legal">
