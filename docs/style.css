@@ -190,15 +190,6 @@ img, svg { display: block; }
   align-items: center;
 }
 
-.hero-eyebrow {
-  font-size: 19px;
-  font-weight: 600;
-  color: #6fb6ff;
-  margin-bottom: 14px;
-  letter-spacing: normal;
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
-}
-
 .hero h1 {
   font-size: clamp(48px, 9vw, 96px);
   font-weight: 700;
