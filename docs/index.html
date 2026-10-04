@@ -3,515 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<title>Andydot Studio - 我的项目作品集</title>
-<meta name="description" content="Andydot Studio - 我的开源项目作品集。包含 Vchange 视频转换器等实用工具。">
+<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>Andydot — 简洁、纯粹的工具软件</title>
+<meta name="description" content="Andydot 的作品集。独立开发简洁、高效、纯粹的工具软件，代表作 Vchange —— Windows 视频转换器。">
+<meta property="og:title" content="Andydot — 简洁、纯粹的工具软件">
+<meta property="og:description" content="独立开发简洁、高效、纯粹的工具软件，代表作 Vchange。">
+<meta property="og:url" content="https://justice0418.qd.je/">
 <link rel="preconnect" href="https://gh-proxy.com">
-<link rel="preconnect" href="https://github.com">
 <link rel="icon" href="https://gh-proxy.com/https://raw.githubusercontent.com/Andydot-ui/Vchange/main/docs/images/logo-light-theme.png" media="(prefers-color-scheme: light)">
 <link rel="icon" href="https://gh-proxy.com/https://raw.githubusercontent.com/Andydot-ui/Vchange/main/docs/images/logo-dark-theme.png" media="(prefers-color-scheme: dark)">
-<style>
-/* ===== CSS Variables (Design Tokens) ===== */
-:root {
-  /* Dark (default) */
-  --bg: #0d1117;
-  --bg-elevated: #161b22;
-  --bg-hover: #1f2428;
-  --border: #30363d;
-  --fg: #e6edf3;
-  --fg-muted: #8b949e;
-  --accent: #58a6ff;
-  --accent-hover: #79b8ff;
-  --accent-soft: rgba(88,166,255,.12);
-  --danger: #f85149;
-  --success: #3fb950;
-  --font-sans: "Microsoft YaHei UI", "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow: 0 8px 30px rgba(0,0,0,.35);
-  --shadow-sm: 0 2px 8px rgba(0,0,0,.2);
-  --transition: 0.2s cubic-bezier(.4,0,.2,1);
-}
-
-/* Light mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #ffffff;
-    --bg-elevated: #f6f8fa;
-    --bg-hover: #f0f3f6;
-    --border: #d0d7de;
-    --fg: #1f2328;
-    --fg-muted: #656d76;
-    --accent: #0969da;
-    --accent-hover: #0860ca;
-    --accent-soft: rgba(9,105,218,.1);
-    --shadow: 0 8px 30px rgba(27,31,35,.08);
-    --shadow-sm: 0 1px 4px rgba(27,31,35,.08);
-  }
-}
-
-/* ===== Reset ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-sans);
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
-a:hover { color: var(--accent-hover); }
-img { max-width: 100%; height: auto; display: block; border-radius: var(--radius-sm); }
-h1, h2, h3 { font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); margin-bottom: 1rem; }
-h3 { font-size: 1.15rem; margin-bottom: .5rem; }
-p { color: var(--fg-muted); font-size: 1rem; }
-code { font-family: "JetBrains Mono", "Fira Code", Consolas, monospace; background: var(--bg-hover); padding: .15em .4em; border-radius: 4px; font-size: .9em; }
-kbd { background: var(--bg-hover); border: 1px solid var(--border); padding: .1em .4em; border-radius: 4px; font-family: inherit; font-size: .85em; }
-hr { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
-
-/* ===== Layout Helpers ===== */
-.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 6rem 0; }
-.section-title { text-align: center; margin-bottom: 3.5rem; }
-.section-title h2 { margin-bottom: .5rem; }
-.section-title p { max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
-.section-title h2 { margin-bottom: .5rem; }
-.section-title p { max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
-
-/* ===== Buttons ===== */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  padding: .85rem 1.75rem; font-size: 1rem; font-weight: 600;
-  border-radius: var(--radius-sm); border: 1px solid transparent;
-  cursor: pointer; transition: all var(--transition);
-  text-decoration: none; white-space: nowrap;
-}
-.btn-primary {
-  background: linear-gradient(135deg, var(--accent), #3b82f6);
-  color: #fff; border-color: transparent;
-  box-shadow: 0 4px 14px rgba(88,166,255,.35);
-}
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(88,166,255,.45); }
-.btn-primary:active { transform: translateY(0); }
-.btn-ghost {
-  background: transparent; color: var(--fg); border-color: var(--border);
-}
-.btn-ghost:hover { background: var(--bg-hover); border-color: var(--accent); color: var(--accent); }
-.btn-lg { padding: 1rem 2.5rem; font-size: 1.1rem; }
-
-/* ===== Header / Nav ===== */
-.site-header {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(var(--bg-rgb, 13,17,23), .85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 100;
-}
-.header-inner {
-  max-width: 1120px; margin: 0 auto; padding: 0 24px;
-  display: flex; align-items: center; justify-content: space-between; height: 64px;
-}
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
-.logo img { width: 28px; height: 28px; }
-.nav { display: flex; gap: 8px; }
-.nav a { padding: 6px 14px; border-radius: var(--radius-sm); color: var(--fg-muted); font-size: .9rem; font-weight: 500; transition: all .15s; }
-.nav a:hover { color: var(--fg); background: var(--bg-hover); }
-.nav a.active { color: var(--accent); background: var(--accent-soft); }
-.mobile-menu-btn { display: none; background: none; border: none; color: var(--fg); font-size: 1.5rem; cursor: pointer; }
-
-/* ===== Hero ===== */
-.hero {
-  position: relative; padding: 8rem 0 6rem; text-align: center; overflow: hidden;
-}
-.hero::before {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, var(--accent-soft), transparent 70%);
-  pointer-events: none;
-}
-.hero-logo { width: 72px; height: 72px; margin: 0 auto 1.5rem; filter: drop-shadow(0 8px 24px var(--accent-soft)); }
-.hero h1 { margin-bottom: 1rem; background: linear-gradient(135deg, var(--fg) 30%, var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-.hero .lead { font-size: 1.25rem; color: var(--fg-muted); max-width: 640px; margin: 0 auto 2.5rem; line-height: 1.7; }
-.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
-.badges { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
-.badge { font-size: .75rem; font-weight: 500; padding: .35rem .75rem; border-radius: 999px; background: var(--bg-elevated); border: 1px solid var(--border); color: var(--fg-muted); }
-
-/* ===== Projects Grid ===== */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-.project-card {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem;
-  transition: all var(--transition);
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-}
-.project-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: var(--shadow);
-}
-.project-card-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-.project-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: var(--accent-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 1.8rem;
-}
-.project-info h3 {
-  font-size: 1.25rem;
-  margin-bottom: .25rem;
-}
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  font-size: .8rem;
-  color: var(--fg-muted);
-}
-.project-tag {
-  padding: .15rem .5rem;
-  background: var(--accent-soft);
-  color: var(--accent);
-  border-radius: 999px;
-  font-size: .7rem;
-  font-weight: 500;
-}
-.project-desc {
-  color: var(--fg-muted);
-  font-size: .95rem;
-  flex: 1;
-}
-.project-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-}
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .6rem 1.25rem;
-  border-radius: var(--radius-sm);
-  font-size: .9rem;
-  font-weight: 600;
-  transition: all var(--transition);
-}
-.project-link-primary {
-  background: linear-gradient(135deg, var(--accent), #3b82f6);
-  color: #fff;
-  border-color: transparent;
-}
-.project-link-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(88,166,255,.45);
-}
-.project-link-ghost {
-  background: transparent;
-  color: var(--fg);
-  border-color: var(--border);
-}
-.project-link-ghost:hover {
-  background: var(--bg-hover);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.project-meta-info {
-  display: flex;
-  gap: 1rem;
-  font-size: .85rem;
-  color: var(--fg-muted);
-}
-.project-meta-info span {
-  display: flex;
-  align-items: center;
-  gap: .35rem;
-}
-
-/* ===== Stats Bar ===== */
-.stats-bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  margin: 3rem 0;
-  padding: 2rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-.stat-item {
-  text-align: center;
-}
-.stat-value {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--accent), #3b82f6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.stat-label {
-  color: var(--fg-muted);
-  font-size: .9rem;
-  margin-top: .25rem;
-}
-
-/* ===== Footer ===== */
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 3rem 0 2rem;
-  background: var(--bg-elevated);
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr repeat(3, 1fr);
-  gap: 2rem;
-}
-@media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-.footer-brand { max-width: 280px; }
-.footer-brand .logo { margin-bottom: .75rem; }
-.footer-brand p { font-size: .9rem; line-height: 1.7; }
-.footer-col h4 { font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--fg-muted); margin-bottom: 1rem; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
-.footer-col a { color: var(--fg-muted); font-size: .9rem; transition: color .15s; }
-.footer-col a:hover { color: var(--accent); }
-.footer-bottom { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; font-size: .8rem; color: var(--fg-muted); }
-
-/* ===== Responsive ===== */
-@media (max-width: 700px) {
-  .hero { padding: 5rem 0 4rem; }
-  .hero h1 { font-size: 2.25rem; }
-  .hero .lead { font-size: 1.1rem; }
-  .btn-lg { padding: .85rem 2rem; font-size: 1rem; }
-  .section { padding: 4rem 0; }
-  .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 480px) {
-  .footer-grid { grid-template-columns: 1fr; }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-  html { scroll-behavior: auto; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a href="#main" class="skip-link">跳转到主内容</a>
 
-<!-- ===== Header ===== -->
-<header class="site-header" role="banner">
-  <div class="header-inner">
-    <a href="#top" class="logo" aria-label="Andydot Studio 首页">
-      <img src="https://gh-proxy.com/https://raw.githubusercontent.com/Andydot-ui/Vchange/main/docs/images/logo-light-theme.png" alt="" width="28" height="28" style="display:block;">
-      <span>Andydot Studio</span>
+<a class="skip-link" href="#main">跳转到主要内容</a>
+
+<!-- 导航 -->
+<header class="nav" id="nav">
+  <nav class="nav-inner" aria-label="主导航">
+    <a class="nav-logo" href="#top" aria-label="Andydot 首页">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/>
+      </svg>
+      Andydot
     </a>
-    <nav class="nav" role="navigation" aria-label="主导航">
-      <a href="#projects">项目</a>
-      <a href="https://github.com/Andydot-ui" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-    <button class="mobile-menu-btn" aria-label="展开菜单" aria-expanded="false" aria-controls="mobile-menu">☰</button>
-  </div>
+    <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#work">项目</a></li>
+      <li><a href="#about">关于</a></li>
+      <li><a href="https://github.com/Andydot-ui" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </nav>
 </header>
 
-<main id="main" role="main">
+<main id="main">
 
-<!-- ===== Hero ===== -->
-<section class="hero" aria-labelledby="hero-title">
-  <div class="container">
-    <img class="hero-logo" src="https://gh-proxy.com/https://raw.githubusercontent.com/Andydot-ui/Vchange/main/docs/images/logo-light-theme.png" alt="" width="72" height="72" aria-hidden="true">
-    <h1 id="hero-title">Andydot Studio</h1>
-    <p class="lead">独立开发者作品集 · 专注实用工具与开发者工具</p>
-    <div class="badges">
-      <span class="badge">开源项目</span>
-      <span class="badge">Windows 工具</span>
-      <span class="badge">开源免费</span>
-    </div>
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <p class="hero-eyebrow reveal">Andydot 的作品集</p>
+  <h1 class="reveal">创造，<br class="hero-br">源于热爱。</h1>
+  <p class="hero-sub reveal">我独立开发简洁、高效、纯粹的工具软件，<br>让每一次使用都轻而易举。</p>
+  <div class="hero-links reveal">
+    <a class="btn btn-primary" href="#work">探索项目</a>
+    <a class="btn btn-ghost" href="https://github.com/Andydot-ui" target="_blank" rel="noopener">GitHub ›</a>
   </div>
 </section>
 
-<!-- ===== Stats Bar ===== -->
-<section class="section" aria-labelledby="stats-title">
-  <div class="container">
-    <div class="stats-bar" role="region" aria-label="项目统计">
-      <div class="stat-item">
-        <div class="stat-value" id="projects-count">3+</div>
-        <div class="stat-label">开源项目</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value" id="downloads-count">10k+</div>
-        <div class="stat-label">累计下载</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value" id="stars-count">500+</div>
-        <div class="stat-label">GitHub Stars</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value" id="platforms-count">Windows</div>
-        <div class="stat-label">支持平台</div>
+<!-- 精选项目：Vchange -->
+<section class="feature" id="work">
+  <div class="section-head reveal">
+    <h2>精选项目</h2>
+  </div>
+
+  <article class="feature-card reveal">
+    <div class="feature-media" aria-hidden="true">
+      <div class="feature-glow"></div>
+      <div class="feature-window">
+        <div class="feature-window-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="feature-window-body">
+          <div class="fw-row fw-title"></div>
+          <div class="fw-row fw-line w80"></div>
+          <div class="fw-row fw-line w60"></div>
+          <div class="fw-progress"><span></span></div>
+          <div class="fw-chips">
+            <span>MP4</span><span>HEVC</span><span>8K</span><span>AV1</span>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="feature-copy">
+      <h3>Vchange</h3>
+      <p class="feature-tagline">视频转换，轻而易举。</p>
+      <p class="feature-desc">免费开源的 Windows 视频转换器。单个 exe 内嵌完整 ffmpeg，六步向导操作，支持 20 种输出格式与 GPU 硬件加速，下载即用、无需安装。</p>
+      <div class="feature-stats">
+        <div><strong>20</strong><span>种输出格式</span></div>
+        <div><strong>6</strong><span>步向导操作</span></div>
+        <div><strong>0</strong><span>项环境配置</span></div>
+      </div>
+      <div class="feature-actions">
+        <a class="btn btn-primary" href="https://vchange.qd.je/" target="_blank" rel="noopener">立即体验</a>
+        <a class="btn btn-ghost" href="https://github.com/Andydot-ui/Vchange" target="_blank" rel="noopener">GitHub ›</a>
+      </div>
+    </div>
+  </article>
+
+  <div class="more-card reveal">
+    <h3>更多作品，正在路上。</h3>
+    <p>新的工具正在打磨中，敬请期待。</p>
   </div>
 </section>
 
-<!-- ===== Projects Grid ===== -->
-<section id="projects" class="section" aria-labelledby="projects-title">
-  <div class="container">
-    <header class="section-title">
-      <h2 id="projects-title">我的项目</h2>
-      <p>实用工具与开发者工具，持续更新中...</p>
-    </header>
-    <div class="projects-grid" role="list" aria-label="项目列表">
-      
-      <!-- Project 1: Vchange -->
-      <a href="https://vchange.qd.je" class="project-card" role="listitem" target="_blank" rel="noopener" aria-label="Vchange - 视频转换器">
-        <div class="project-card-header">
-          <div class="project-icon" aria-hidden="true">🎬</div>
-          <div>
-            <h3>Vchange</h3>
-            <div class="project-meta">
-              <span class="project-tag">视频转换</span>
-              <span class="project-tag">Windows</span>
-              <span class="project-tag">WPF</span>
-            </div>
-          </div>
-        </div>
-        <p class="project-desc">简洁美观的 Windows 视频转换器。内置完整 ffmpeg，向导式操作，支持编码/分辨率/帧率/码率灵活配置，内置完整 ffmpeg，首次运行自动释放，无需安装。</p>
-        <div class="project-footer">
-          <div class="project-meta-info">
-            <span>⭐ 500+ Stars</span>
-            <span>📥 10k+ 下载</span>
-            <span>🪟 Windows 10/11</span>
-          </div>
-          <span class="project-link project-link-primary">前往下载 →</span>
-        </div>
+<!-- 关于 -->
+<section class="about" id="about">
+  <div class="section-head reveal">
+    <h2>关于我</h2>
+  </div>
+  <div class="about-body reveal">
+    <p>我是 Andydot，一名独立开发者。我相信好的工具应当像空气一样——存在，却不打扰。我专注于为 Windows 打造开箱即用的实用软件，坚持干净的设计、扎实的工程和克制的功能取舍。</p>
+    <p>该有的全都有，不该有的一样也没有。</p>
+    <div class="about-links">
+      <a href="https://github.com/Andydot-ui" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
       </a>
-
-      <!-- Project 2: Placeholder for future projects -->
-      <article class="project-card coming-soon" style="opacity: 0.5; pointer-events: none;">
-        <div class="project-card-header">
-          <div class="project-icon" aria-hidden="true">🛠️</div>
-          <div>
-            <h3>新项目开发中...</h3>
-            <div class="project-meta">
-              <span class="project-tag">敬请期待</span>
-            </div>
-          </div>
-        </div>
-        <p class="project-desc">更多实用工具正在开发中，敬请期待...</p>
-        <div class="project-footer">
-          <span class="project-link project-link-ghost" style="pointer-events: none;">敬请期待</span>
-        </div>
-      </article>
-
-      <!-- Project 3: Placeholder for future projects -->
-      <article class="project-card coming-soon" style="opacity: 0.5; pointer-events: none;">
-        <div class="project-card-header">
-          <div class="project-icon" aria-hidden="true">🔧</div>
-          <div>
-            <h3>更多工具计划中</h3>
-            <div class="project-meta">
-              <span class="project-tag">规划中</span>
-            </div>
-          </div>
-        </div>
-        <p class="project-desc">更多实用的开发者工具和实用程序正在规划中...</p>
-        <div class="project-footer">
-          <span class="project-link project-link-ghost" style="pointer-events: none;">即将推出</span>
-        </div>
-      </article>
-
+      <a href="mailto:andydot@qq.com">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        联系我
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ===== Footer ===== -->
-<footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col footer-brand">
-        <div class="logo"><img src="https://gh-proxy.com/https://raw.githubusercontent.com/Andydot-ui/Vchange/main/docs/images/logo-light-theme.png" alt="" width="28" height="28"> Andydot Studio</div>
-        <p>独立开发者 · 专注实用工具与开发者工具</p>
-      </div>
-      <nav class="footer-col" aria-label="快速链接">
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <div class="footer-col">
         <h4>项目</h4>
-        <ul>
-          <li><a href="https://vchange.qd.je" target="_blank" rel="noopener">Vchange 视频转换器</a></li>
-          <li><a href="https://github.com/Andydot-ui" target="_blank" rel="noopener">GitHub 组织</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-col" aria-label="社交链接">
-        <h4>联系方式</h4>
-        <ul>
-          <li><a href="https://github.com/Andydot-ui" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="mailto:andydot@qq.com">邮箱联系</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-col" aria-label="法律信息">
-        <h4>法律</h4>
-        <ul>
-          <li><a href="https://github.com/Andydot-ui/Vchange/blob/main/LICENSE" target="_blank" rel="noopener">MIT 许可证</a></li>
-          <li><a href="https://github.com/Andydot-ui/Vchange/blob/main/PRIVACY.md" target="_blank" rel="noopener">隐私政策</a></li>
-        </ul>
-      </nav>
+        <a href="https://vchange.qd.je/" target="_blank" rel="noopener">Vchange</a>
+        <a href="https://github.com/Andydot-ui/Vchange" target="_blank" rel="noopener">Vchange on GitHub</a>
+      </div>
+      <div class="footer-col">
+        <h4>连接</h4>
+        <a href="https://github.com/Andydot-ui" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:andydot@qq.com">邮件联系</a>
+      </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Andydot Studio · 基于 MIT 许可证开源 · <a href="mailto:andydot@qq.com">andydot@qq.com</a></p>
+    <div class="footer-legal">
+      <p>© 2026 Andydot. 保留所有权利。</p>
+      <p>用热爱与克制，打造每一个产品。</p>
     </div>
   </div>
 </footer>
 
-<script>
-/* Mobile menu toggle (simple) */
-const menuBtn = document.querySelector('.mobile-menu-btn');
-if (menuBtn) {
-  menuBtn.addEventListener('click', () => {
-    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-    menuBtn.setAttribute('aria-expanded', !expanded);
-    document.querySelector('.nav').classList.toggle('open');
-  });
-}
-
-/* Smooth scroll for anchor links */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  });
-}
-
-/* Respect prefers-reduced-motion */
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.documentElement.style.setProperty('--transition', '0.01ms');
-}
-</script>
+<script src="script.js"></script>
 </body>
 </html>
