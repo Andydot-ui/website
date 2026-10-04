@@ -196,6 +196,7 @@ img, svg { display: block; }
   color: #6fb6ff;
   margin-bottom: 14px;
   letter-spacing: normal;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
 }
 
 .hero h1 {
@@ -203,8 +204,8 @@ img, svg { display: block; }
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  /* 中文行尾标点会让居中文本看起来偏左，用等宽内边距补偿 */
-  padding-left: 0.35em;
+  /* 中文行尾标点的墨迹偏左，按墨迹中心补偿（padding 使内容右移 padding/2） */
+  padding-left: 0.72em;
   background: linear-gradient(180deg, #ffffff 25%, rgba(255, 255, 255, 0.6) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -220,7 +221,7 @@ img, svg { display: block; }
   line-height: 1.4;
   letter-spacing: normal;
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
-  padding-left: 0.35em;
+  padding-left: 0.72em;
 }
 
 .hero-links {
