@@ -16,7 +16,9 @@
 :root {
   --bg: #0a0a0a;
   --bg-elevated: #111111;
-  --fg: #ffffff;
+  --bg-hover: #1f2428;
+  --border: #27272a;
+  --fg: #fafafa;
   --fg-muted: #a1a1aa;
   --accent: #ffffff;
   --accent-hover: #e5e5e5;
@@ -33,10 +35,10 @@
     --bg: #fafafa;
     --fg: #18181b;
     --fg-muted: #71717a;
-    --card-bg: #ffffff;
-    --card-hover: #f4f4f5;
-    --border: #e4e4e7;
     --accent: #18181b;
+    --accent-hover: #0969da;
+    --accent-soft: rgba(24,108,218,.1);
+    --border: #e4e4e7;
   }
 }
 
@@ -57,7 +59,7 @@ body {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 h1, h2, h3 { font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
-h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: -0.03em; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; letter-spacing: -0.03em; }
 h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; }
 p { color: #a1a1aa; line-height: 1.7; }
 @media (prefers-color-scheme: light) {
@@ -68,8 +70,51 @@ p { color: #a1a1aa; line-height: 1.7; }
 a { color: inherit; text-decoration: none; transition: opacity .2s; }
 a:hover { opacity: 0.7; }
 img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-weight: 400; line-height: 1.2; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; }
+p { color: #a1a1aa; line-height: 1.7; }
+@media (prefers-color-scheme: light) {
+  p { color: #71717a; }
+}
 
-/* Header */
+.container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; text-decoration: none; transition: opacity .2s; }
+a:hover { opacity: 0.7; }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-weight: 400; line-height: 1.2; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; }
+p { color: #a1a1aa; line-height: 1.7; }
+@media (prefers-color-scheme: light) {
+  p { color: #71717a; }
+}
+
+.container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; text-decoration: none; transition: opacity .2s; }
+a:hover { opacity: 0.7; }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-weight: 400; line-height: 1.2; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; }
+p { color: #a1a1aa; line-height: 1.7; }
+@media (prefers-color-scheme: light) {
+  p { color: #71717a; }
+}
+
+.container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; text-decoration: none; transition: opacity .2s; }
+a:hover { opacity: 0.7; }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-weight: 400; line-height: 1.2; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; }
+p { color: #a1a1aa; line-height: 1.7; }
+@media (prefers-color-scheme: light) {
+  p { color: #71717a; }
+}
+
+/* ===== Header ===== */
 header {
   position: sticky; top: 0; z-index: 50;
   background: rgba(10,10,10,0.8);
@@ -103,7 +148,7 @@ h1 { font-weight: 300; letter-spacing: -0.04em; line-height: 1.1; background: li
 .hero p { font-size: 1.25rem; color: #71717a; max-width: 600px; margin: 1.5rem auto 3rem; line-height: 1.7; }
 @media (prefers-color-scheme: light) { .hero p { color: #71717a; } }
 .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; transition: all .2s; border: 1px solid transparent; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; transition: all .2s; border: 1px solid transparent; }
 .btn-primary { background: #18181b; color: #fff; }
 @media (prefers-color-scheme: light) { .btn-primary { background: #18181b; color: #fff; } }
 .btn-primary:hover { background: #27272a; }
@@ -217,7 +262,7 @@ footer { border-top: 1px solid #27272a; padding: 48px 0 32px; }
     <a href="/" class="logo" aria-label="Andydot Studio 首页">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;">
         <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"/>
-        <path d="M9 12h6M12 9v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M9 12h6M12 9v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <span>Andydot Studio</span>
     </a>
@@ -232,35 +277,35 @@ footer { border-top: 1px solid #27272a; padding: 48px 0 32px; }
 <!-- Hero -->
 <header class="hero">
   <div class="container">
-    <div style="width:80px;height:80px;margin:0 auto 1.5rem;opacity:0;transform:translateY(20px);animation:fadeUp 0.8s ease forwards;">
+    <div class="hero-logo" style="width:80px;height:80px;margin:0 auto 1.5rem;opacity:0;transform:translateY(20px);animation:fadeUp 0.8s ease forwards;">
       <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M9 12h6M12 9v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M9 12h6M12 9v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
     <h1>Andydot Studio</h1>
-    <p style="font-size:1.25rem;color:#71717a;max-width:600px;margin:1.5rem auto 3rem;line-height:1.7;">独立开发者作品集 · 专注实用工具与开发者工具</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:2.5rem;">
-      <a href="https://vchange.justice0418.qd.je" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:all .2s;border:1px solid transparent;background:linear-gradient(135deg,#58a6ff,#3b82f6);color:#fff;box-shadow:0 4px 14px rgba(88,166,255,.35);">🚀 Vchange 视频转换器</a>
-      <a href="https://github.com/Andydot-ui" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:all .2s;border:1px solid #3f3f46;color:#fff;background:transparent;">GitHub</a>
+    <p class="lead" style="font-size:1.25rem;color:#71717a;max-width:600px;margin:1.5rem auto 3rem;line-height:1.7;">独立开发者作品集 · 专注实用工具与开发者工具</p>
+    <div class="hero-actions" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:2.5rem;">
+      <a href="https://vchange.justice0418.qd.je" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:all .2s;border:1px solid transparent;background:linear-gradient(135deg,#58a6ff,#3b82f6);color:#fff;box-shadow:0 4px 14px rgba(88,166,255,.35);">🚀 Vchange 视频转换器</a>
+      <a href="https://github.com/Andydot-ui" target="_blank" rel="noopener" class="btn btn-ghost" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:all .2s;border:1px solid #3f3f46;color:#fff;background:transparent;">GitHub</a>
     </div>
-    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
-      <span style="padding:4px 12px;border:1px solid #27272a;border-radius:999px;font-size:12px;color:#71717a;font-weight:500;">Windows</span>
-      <span style="padding:4px 12px;border:1px solid #27272a;border-radius:999px;font-size:12px;color:#71717a;font-weight:500;">开源免费</span>
-      <span style="padding:4px 12px;border:1px solid #27272a;border-radius:999px;font-size:12px;color:#71717a;font-weight:500;">WPF</span>
+    <div class="badge-row" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+      <span class="badge" style="padding:4px 12px;border:1px solid #27272a;border-radius:999px;font-size:12px;color:#71717a;font-weight:500;">Windows</span>
+      <span class="badge" style="padding:4px 12px;border:1px solid #27272a;border-radius:999px;font-size:12px;color:#71717a;font-weight:500;">开源免费</span>
+      <span class="badge" style="padding:4px 12px;border:1px solid #27272a;border-radius:999px;font-size:12px;color:#71717a;font-weight:500;">WPF</span>
     </div>
   </div>
 </header>
 
 <main id="main">
   <section style="padding:120px 0 80px;">
-    <div style="max-width:1040px;margin:0 auto;padding:0 24px;">
+    <div class="container">
       <h2 style="font-weight:400;font-size:clamp(1.75rem,3vw,2.5rem);letter-spacing:-0.02em;margin-bottom:8px;text-align:center;">Projects</div>
       <p style="color:#71717a;font-size:1rem;max-width:500px;margin:0 auto 60px;text-align:center;">精选项目 · 持续更新中</p>
       
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:48px;">
-        <!-- Project: Vchange -->
-        <a href="https://vchange.justice0418.qd.je" target="_blank" rel="noopener" style="background:#18181b;border:1px solid #27272a;border-radius:16px;padding:32px;transition:transform .3s ease,border-color .2s,box-shadow .2s;text-decoration:none;color:inherit;display:flex;flex-direction:column;height:100%;">
+      <div class="projects-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px;">
+        <!-- Project 1: Vchange -->
+        <a href="https://vchange.justice0418.qd.je" target="_blank" rel="noopener" class="project-card" style="background:#18181b;border:1px solid #27272a;border-radius:16px;padding:32px;transition:transform .3s ease,border-color .2s,box-shadow .2s;text-decoration:none;color:inherit;display:flex;flex-direction:column;height:100%;">
           <div style="font-size:2.5rem;margin-bottom:16px;line-height:1;">🎬</div>
           <h3 style="font-size:1.25rem;font-weight:500;margin-bottom:8px;">Vchange 视频转换器</h3>
           <p style="color:#71717a;font-size:15px;line-height:1.7;margin-bottom:24px;">简洁美观的 Windows 视频转换器。内置完整 ffmpeg，向导式操作，支持编码/分辨率/帧率/码率灵活配置，单文件免安装。</p>
@@ -311,7 +356,7 @@ footer { border-top: 1px solid #27272a; padding: 48px 0 32px; }
   <div style="max-width:1040px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;">
     <div style="max-width:280px;">
       <div style="display:flex;align-items:center;gap:10px;font-weight:500;font-size:1.125rem;margin-bottom:12px;">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"/><path d="M9 12h6M12 9v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"/><path d="M9 12h6M12 9v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Andydot Studio</span>
       </div>
       <p style="color:#71717a;font-size:14px;line-height:1.7;max-width:280px;">独立开发者 · 专注实用工具与开发者工具</p>
@@ -320,7 +365,72 @@ footer { border-top: 1px solid #27272a; padding: 48px 0 32px; }
     <nav><h4 style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#71717a;margin-bottom:16px;">联系</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:10px;"><li><a href="https://github.com/Andydot-ui" target="_blank" rel="noopener" style="color:#71717a;font-size:14px;transition:color .2s;">GitHub</a></li><li><a href="mailto:andydot@qq.com" style="color:#71717a;font-size:14px;transition:color .2s;">邮箱联系</a></li></ul></nav>
     <nav><h4 style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#71717a;margin-bottom:16px;">法律</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:10px;"><li><a href="https://github.com/Andydot-ui/Vchange/blob/main/LICENSE" target="_blank" rel="noopener" style="color:#71717a;font-size:14px;transition:color .2s;">MIT 许可证</a></li></ul></nav>
     <div style="border-top:1px solid #27272a;margin-top:40px;padding-top:24px;text-align:center;font-size:13px;color:#71717a;">© 2026 Andydot Studio · 基于 MIT 许可证开源 · <a href="mailto:andydot@qq.com" style="color:#71717a;">andydot@qq.com</a></div>
+  </div>
 </footer>
 
+<script>
+/* ===== Lightbox ===== */
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightbox-img');
+const screenshots = document.querySelectorAll('.screenshot');
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  const img = screenshots[index].querySelector('img');
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', onKeydown);
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', onKeydown);
+}
+function navigate(dir) {
+  currentIndex = (currentIndex + dir + screenshots.length) % screenshots.length;
+  const img = screenshots[currentIndex].querySelector('img');
+  lbImg.style.opacity = 0;
+  setTimeout(() => { lbImg.src = screenshots[currentIndex].querySelector('img').src; lbImg.style.opacity = 1; }, 80);
+}
+function onKeydown(e) {
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowLeft') navigate(-1);
+  else if (e.key === 'ArrowRight') navigate(1);
+}
+screenshots.forEach((el, i) => {
+  el.addEventListener('click', () => openLightbox(i));
+  el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); } });
+});
+lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+lightbox.querySelector('.lightbox-prev').addEventListener('click', () => navigate(-1));
+lightbox.querySelector('.lightbox-next').addEventListener('click', () => navigate(1));
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+/* Mobile menu toggle (simple) */
+const menuBtn = document.query('.mobile-menu-btn');
+if (menuBtn) {
+  menuBtn.addEventListener('click', () => {
+    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', !expanded);
+    document.querySelector('.nav').classList.toggle('open');
+  });
+}
+
+/* Smooth scroll for anchor links */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+}
+
+/* Respect prefers-reduced-motion */
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.style.setProperty('--transition', '0.01ms');
+}
+</script>
 </body>
 </html>
