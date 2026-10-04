@@ -530,7 +530,6 @@ img, svg { display: block; }
   .nav-toggle { display: flex; }
 
   .hero { min-height: 78vh; padding-top: 120px; }
-  .hero-br { display: none; }
 
   .feature { padding: 80px 18px; }
   .feature-copy { padding: 4px 26px 48px; }
