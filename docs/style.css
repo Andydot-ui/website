@@ -420,6 +420,137 @@ img, svg { display: block; }
 }
 .feature-actions .btn-ghost { color: #6fb6ff; }
 
+/* 第二个项目卡片（浅色、反排） */
+.project-card {
+  max-width: 1080px;
+  margin: 32px auto 0;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.project-copy {
+  align-self: center;
+  padding: 56px 48px 56px 56px;
+}
+.project-copy h3 {
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+.project-tagline {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.project-desc {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--fg-muted);
+}
+.project-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.project-chips span {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  color: var(--fg-muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+}
+
+/* 卫星云图视觉 */
+.sat-visual {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 40px 32px 36px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 90% 70% at 70% 10%, rgba(29, 42, 82, 0.9), transparent 70%),
+    linear-gradient(180deg, #0b1026 0%, #101a3a 55%, #1a2b52 100%);
+}
+.sat-storm {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  width: 340px;
+  height: 340px;
+  transform: translateX(-50%) rotate(-18deg);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(235, 245, 255, 0.95) 0 9%, transparent 22%),
+    conic-gradient(from 0deg,
+      rgba(90, 170, 255, 0) 0deg,
+      rgba(120, 200, 255, 0.55) 70deg,
+      rgba(235, 245, 255, 0.85) 130deg,
+      rgba(70, 130, 235, 0.5) 200deg,
+      rgba(160, 220, 255, 0.75) 270deg,
+      rgba(90, 170, 255, 0) 360deg);
+  filter: blur(1.5px);
+  animation: storm-spin 26s linear infinite;
+  opacity: 0.9;
+}
+.sat-orbit {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  width: 420px;
+  height: 150px;
+  transform: translateX(-50%) rotate(-16deg);
+  border: 1px solid rgba(160, 200, 255, 0.35);
+  border-radius: 50%;
+}
+.sat-orbit::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 12%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffd166;
+  box-shadow: 0 0 12px rgba(255, 209, 102, 0.9);
+}
+@keyframes storm-spin {
+  to { transform: translateX(-50%) rotate(342deg); }
+}
+.sat-chips {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.sat-chips span {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sat-storm { animation: none; }
+}
+
 /* 更多作品 */
 .more-card {
   max-width: 1080px;
@@ -439,6 +570,53 @@ img, svg { display: block; }
   margin-top: 10px;
   color: var(--fg-muted);
   font-size: 17px;
+}
+
+/* ---------- 信条 ---------- */
+.values {
+  padding: 120px 22px;
+  text-align: center;
+}
+.values .section-head { margin-bottom: 20px; }
+.section-sub {
+  margin-top: 14px;
+  font-size: 19px;
+  color: var(--fg-muted);
+}
+.values-grid {
+  max-width: 1024px;
+  margin: 56px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.value-item {
+  background: var(--bg-alt);
+  border-radius: var(--radius-card);
+  padding: 44px 32px;
+  text-align: center;
+}
+.value-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #0071e3, #5e5ce6);
+}
+.value-item h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.value-item p {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--fg-muted);
 }
 
 /* ---------- 关于 ---------- */
@@ -544,6 +722,11 @@ img, svg { display: block; }
   .feature-copy { padding: 8px 40px 56px; text-align: center; }
   .feature-stats { justify-content: center; }
   .feature-actions { justify-content: center; }
+  .project-card { grid-template-columns: 1fr; min-height: 0; }
+  .project-copy { padding: 48px 40px 40px; text-align: center; }
+  .project-chips, .project-card .feature-actions { justify-content: center; }
+  .sat-visual { min-height: 300px; padding: 32px 24px; }
+  .values-grid { grid-template-columns: 1fr; max-width: 560px; }
   .footer-cols { gap: 48px; flex-wrap: wrap; }
 }
 
