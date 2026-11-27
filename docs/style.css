@@ -590,9 +590,21 @@ img, svg { display: block; }
   display: block;
 }
 
+/* 截图区域整块可点，悬停时描边高亮 */
+.geo-shot-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 18px;
+  transition: box-shadow 0.4s var(--ease);
+}
+.geo-frame:hover .geo-shot-link {
+  box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.7);
+}
+
 .geo-chip {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   font-size: 11px;
   font-weight: 600;
   line-height: 1.4;
