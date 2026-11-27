@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#000000">
 <title>Andydot — 简洁、纯粹的工具软件</title>
-<meta name="description" content="Andydot 的作品集。高中生独立开发者，专注于简单、好玩、实用的小工具开发，代表作 Vchange —— Windows 视频转换、图片转换、延时合成与图片堆砌四合一工具。">
+<meta name="description" content="Andydot 的作品集。高中生独立开发者，专注于简单、好玩、实用的小工具开发，代表作 MapForZZ7Z —— 正射影像、实景三维与激光点云融合的校园三维地图，以及 Vchange —— Windows 视频转换、图片转换、延时合成与图片堆砌四合一工具。">
 <meta property="og:title" content="Andydot — 简洁、纯粹的工具软件">
-<meta property="og:description" content="独立开发简洁、高效、纯粹的工具软件，代表作 Vchange —— 视频 · 图片 · 延时 · 堆砌四合一。">
+<meta property="og:description" content="独立开发简洁、高效、纯粹的工具软件，代表作 MapForZZ7Z 校园三维地图 · Vchange 视频 · 图片 · 延时 · 堆砌四合一。">
 <meta property="og:url" content="https://justice0418.qd.je/">
 <link rel="preconnect" href="https://gh-proxy.com">
 <link rel="icon" href="https://gh-proxy.com/https://raw.githubusercontent.com/Andydot-ui/Vchange/main/docs/images/logo-dark-theme.png">
@@ -48,42 +48,34 @@
   </div>
 </section>
 
-<!-- 精选项目：Vchange -->
+<!-- 精选项目：MapForZZ7Z -->
 <section class="feature" id="work">
   <div class="section-head reveal">
     <h2>精选项目</h2>
   </div>
 
-  <article class="feature-card reveal">
+  <article class="feature-card reveal geo-card">
     <div class="feature-media" aria-hidden="true">
-      <div class="feature-glow"></div>
-      <div class="feature-window">
-        <div class="feature-window-bar">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="feature-window-body">
-          <div class="fw-row fw-title"></div>
-          <div class="fw-row fw-line w80"></div>
-          <div class="fw-row fw-line w60"></div>
-          <div class="fw-progress"><span></span></div>
-          <div class="fw-chips">
-            <span>MP4</span><span>HEVC</span><span>WEBP</span><span>DNG</span>
-          </div>
-        </div>
+      <div class="geo-glow"></div>
+      <div class="geo-frame">
+        <img src="images/map-3d.jpg" width="1200" height="750" alt="">
+        <div class="geo-chip geo-chip-1">正射影像</div>
+        <div class="geo-chip geo-chip-2">实景三维</div>
+        <div class="geo-chip geo-chip-3">激光点云</div>
       </div>
     </div>
     <div class="feature-copy">
-      <h3>Vchange</h3>
-      <p class="feature-tagline">转换，轻而易举。</p>
-      <p class="feature-desc">免费开源的 Windows 多媒体四合一工具：视频转换、图片转换、延时合成、图片堆砌。单个 exe 内嵌 .NET 8 与完整 ffmpeg，全程向导式操作，支持 21 种视频格式、GPU 硬件加速与 HDR 色彩空间，下载即用、无需安装。</p>
+      <h3>MapForZZ7Z</h3>
+      <p class="feature-tagline">一座校园，两个视角。</p>
+      <p class="feature-desc">校园三维可视化项目：把 0.05 米/像素的正射影像、倾斜摄影实景模型与激光雷达点云放进同一套 UTM 49N 坐标系，做成可缩放、可量测、可漫游的网页地图与三维场景。瓦片按需加载，模型经 Draco 压缩，点云走八叉树 LOD。</p>
       <div class="feature-stats">
-        <div><strong>4</strong><span>大核心功能</span></div>
-        <div><strong>21</strong><span>种视频格式</span></div>
-        <div><strong>0</strong><span>项环境配置</span></div>
+        <div><strong>34.3 M</strong><span>激光点</span></div>
+        <div><strong>329 K</strong><span>三角面</span></div>
+        <div><strong>0.05 m</strong><span>影像分辨率</span></div>
       </div>
       <div class="feature-actions">
-        <a class="btn btn-primary" href="https://andydot-ui.github.io/Vchange/" target="_blank" rel="noopener">立即体验</a>
-        <a class="btn btn-ghost" href="https://github.com/Andydot-ui/Vchange" target="_blank" rel="noopener">GitHub ›</a>
+        <a class="btn btn-primary" href="https://andydot.dpdns.org/map" target="_blank" rel="noopener">打开地图</a>
+        <a class="btn btn-ghost" href="https://github.com/Andydot-ui/MapForZZ7Z" target="_blank" rel="noopener">GitHub ›</a>
       </div>
     </div>
   </article>
@@ -106,6 +98,37 @@
       <div class="sat-orbit"></div>
       <div class="sat-chips">
         <span>GK-2A 红外</span><span>GK-2A 全彩</span><span>FY-4B 全盘</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="project-card reveal">
+    <div class="project-copy">
+      <h3>Vchange</h3>
+      <p class="project-tagline">转换，轻而易举。</p>
+      <p class="project-desc">免费开源的 Windows 多媒体四合一工具：视频转换、图片转换、延时合成、图片堆砌。单个 exe 内嵌 .NET 8 与完整 ffmpeg，全程向导式操作，支持 21 种视频格式、GPU 硬件加速与 HDR 色彩空间，下载即用、无需安装。</p>
+      <div class="project-chips">
+        <span>C#</span><span>.NET 8</span><span>ffmpeg</span><span>WPF</span>
+      </div>
+      <div class="feature-actions">
+        <a class="btn btn-primary" href="https://andydot-ui.github.io/Vchange/" target="_blank" rel="noopener">立即体验</a>
+        <a class="btn btn-ghost" href="https://github.com/Andydot-ui/Vchange" target="_blank" rel="noopener">GitHub ›</a>
+      </div>
+    </div>
+    <div class="sat-visual" aria-hidden="true">
+      <div class="feature-window">
+        <div class="feature-window-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="feature-window-body">
+          <div class="fw-row fw-title"></div>
+          <div class="fw-row fw-line w80"></div>
+          <div class="fw-row fw-line w60"></div>
+          <div class="fw-progress"><span></span></div>
+          <div class="fw-chips">
+            <span>MP4</span><span>HEVC</span><span>WEBP</span><span>DNG</span>
+          </div>
+        </div>
       </div>
     </div>
   </article>
@@ -166,6 +189,7 @@
     <div class="footer-cols">
       <div class="footer-col">
         <h4>项目</h4>
+        <a href="https://andydot.dpdns.org/map" target="_blank" rel="noopener">MapForZZ7Z 校园三维地图</a>
         <a href="https://andydot-ui.github.io/Vchange/" target="_blank" rel="noopener">Vchange</a>
         <a href="https://andydot-ui.github.io/GK-2A-Infrared-Cloud-Image-Automatic-Scraping-Script/" target="_blank" rel="noopener">GK-2A 云图抓取脚本</a>
       </div>
