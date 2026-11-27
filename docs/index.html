@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#000000">
 <title>Andydot — 简洁、纯粹的工具软件</title>
-<meta name="description" content="Andydot 的作品集。高中生独立开发者，专注于简单、好玩、实用的小工具开发，代表作 MapForZZ7Z —— 正射影像、实景三维与激光点云融合的校园三维地图，以及 Vchange —— Windows 视频转换、图片转换、延时合成与图片堆砌四合一工具。">
+<meta name="description" content="Andydot 的作品集。高中生独立开发者，专注于简单、好玩、实用的小工具开发，代表作 MapForZZ7Z —— 正射影像、实景三维与激光点云融合的校园三维地图，Vchange —— Windows 视频转换、图片转换、延时合成与图片堆砌四合一工具，另有 RouteStudio 航线规划器与 GK-2A 云图抓取脚本。">
 <meta property="og:title" content="Andydot — 简洁、纯粹的工具软件">
 <meta property="og:description" content="独立开发简洁、高效、纯粹的工具软件，代表作 MapForZZ7Z 校园三维地图 · Vchange 视频 · 图片 · 延时 · 堆砌四合一。">
 <meta property="og:url" content="https://justice0418.qd.je/">
@@ -29,7 +29,10 @@
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#work">项目</a></li>
+      <li><a href="#timeline">历程</a></li>
+      <li><a href="#tech">技术栈</a></li>
       <li><a href="#about">关于</a></li>
+      <li><a href="#contact">联系</a></li>
     </ul>
   </nav>
 </header>
@@ -39,7 +42,7 @@
 <!-- 首屏 -->
 <section class="hero" id="top">
   <div class="hero-inner">
-    <h1 class="reveal">创造，<br class="hero-br">源于热爱。</h1>
+    <h1><span class="hero-line">创造，</span><br class="hero-br"><span class="hero-line">源于热爱。</span></h1>
     <p class="hero-sub reveal">我独立开发简洁、高效、纯粹的工具软件，<br>让每一次使用都轻而易举。</p>
     <div class="hero-links reveal">
       <a class="btn btn-primary" href="#work">探索项目</a>
@@ -51,6 +54,7 @@
 <!-- 精选项目：MapForZZ7Z -->
 <section class="feature" id="work">
   <div class="section-head reveal">
+    <p class="kicker">作品</p>
     <h2>精选项目</h2>
   </div>
 
@@ -140,9 +144,108 @@
   </div>
 </section>
 
+<!-- 数据一览 -->
+<section class="stats" id="data">
+  <div class="section-head reveal">
+    <p class="kicker">数据</p>
+    <h2>数字背后，是一遍遍的取舍。</h2>
+    <p class="section-sub">MapForZZ7Z 的原始体量与最终体量，都摆在这里。</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat reveal">
+      <b><span data-count="2374">0</span></b>
+      <span>张 WebP 瓦片</span>
+      <em>影像 15–21 级切片</em>
+    </div>
+    <div class="stat reveal">
+      <b><span data-count="21.9" data-dec="1">0</span> MB</b>
+      <span>影像切片体积</span>
+      <em>原始 GeoTIFF 351 MB</em>
+    </div>
+    <div class="stat reveal">
+      <b><span data-count="329051">0</span></b>
+      <span>模型三角面</span>
+      <em>glTF 2.0 + Draco</em>
+    </div>
+    <div class="stat reveal">
+      <b><span data-count="19.3" data-dec="1">0</span> MB</b>
+      <span>模型压缩后体积</span>
+      <em>压缩前 366 MB</em>
+    </div>
+    <div class="stat reveal">
+      <b><span data-count="34.3" data-dec="1">0</span> M</b>
+      <span>个原始激光点</span>
+      <em>LAS 1.4 · 点格式 7</em>
+    </div>
+    <div class="stat reveal">
+      <b><span data-count="2.85" data-dec="2">0</span> M</b>
+      <span>点实时渲染</span>
+      <em>八叉树 LOD · 60 fps</em>
+    </div>
+    <div class="stat reveal">
+      <b><span data-count="214">0</span></b>
+      <span>个点云 LOD 节点</span>
+      <em>按屏幕误差流式加载</em>
+    </div>
+    <div class="stat reveal">
+      <b>566 × 591</b>
+      <span>米覆盖范围</span>
+      <em>影像 11,319 × 11,830 px</em>
+    </div>
+  </div>
+</section>
+
+<!-- 更多项目 -->
+<section class="more-projects" id="more">
+  <div class="section-head reveal">
+    <p class="kicker">仓库</p>
+    <h2>仓库里还躺着一些有趣的东西。</h2>
+    <p class="section-sub">都是自己用得上的小工具，顺手也开源出来。</p>
+  </div>
+  <div class="more-grid">
+    <a class="more-item reveal tilt" href="https://github.com/Andydot-ui/RouteStudio" target="_blank" rel="noopener">
+      <div class="more-inner">
+        <span class="more-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20l6-16 3 9 3-5 6 12z"/><circle cx="3" cy="20" r="1.6"/><circle cx="21" cy="20" r="1.6"/></svg>
+        </span>
+        <span class="more-tag">航测规划</span>
+        <h3>RouteStudio</h3>
+        <p>面向 DJI 无人机的纯前端正射航线规划器：在卫星底图上点选区域自动布设航线，航向、行距、重叠率与到点动作都能调，导入导出 DJI WPML KMZ，浅色 / 深色主题随时切换。</p>
+        <div class="more-meta"><span>React 19</span><span>TypeScript</span><span>Leaflet</span></div>
+        <span class="more-link">查看仓库 <span class="arrow">→</span></span>
+      </div>
+    </a>
+    <a class="more-item reveal tilt" href="https://github.com/Andydot-ui/classisland-mgmt" target="_blank" rel="noopener">
+      <div class="more-inner">
+        <span class="more-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 9h8M8 13h5M8 17h8"/></svg>
+        </span>
+        <span class="more-tag">校园管理</span>
+        <h3>classisland-mgmt</h3>
+        <p>郑州市第七高级中学的 ClassIsland 集控静态配置：无服务器模式，22 个分发名，科目表、时间表、课表分片与策略全部托管在 GitHub，客户端填入分发名即可一键加入。</p>
+        <div class="more-meta"><span>ClassIsland</span><span>Node.js</span><span>GitHub Raw</span></div>
+        <span class="more-link">查看仓库 <span class="arrow">→</span></span>
+      </div>
+    </a>
+    <a class="more-item reveal tilt" href="https://github.com/Andydot-ui/Multi-parameter-Environmental-Monitor-Based-on-Arduino" target="_blank" rel="noopener">
+      <div class="more-inner">
+        <span class="more-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="4"/><path d="M12 7v5"/><circle cx="12" cy="16" r="1.4"/></svg>
+        </span>
+        <span class="more-tag">硬件实验</span>
+        <h3>多参数环境监测仪</h3>
+        <p>基于 Arduino 的环境监测小实验：DHT22 读取温湿度，I²C 液晶实时显示，电路图与上传程序一并开源，照着连线就能复现。</p>
+        <div class="more-meta"><span>Arduino</span><span>DHT22</span><span>I²C LCD</span></div>
+        <span class="more-link">查看仓库 <span class="arrow">→</span></span>
+      </div>
+    </a>
+  </div>
+</section>
+
 <!-- 信条 -->
 <section class="values" id="values">
   <div class="section-head reveal">
+    <p class="kicker">标准</p>
     <h2>简单、好玩、实用。</h2>
     <p class="section-sub">我写给自己的三条标准，也是每一个作品的起点。</p>
   </div>
@@ -171,14 +274,156 @@
   </div>
 </section>
 
+<!-- 开发时间线 -->
+<section class="timeline" id="timeline">
+  <div class="section-glow" aria-hidden="true"></div>
+  <div class="section-head reveal">
+    <p class="kicker">历程</p>
+    <h2>从一张云图，到一座校园。</h2>
+    <p class="section-sub">按时间倒序，每一步都留下一点痕迹。</p>
+  </div>
+  <ol class="tl-list reveal">
+    <li class="tl-item" style="--i:0">
+      <span class="tl-dot" aria-hidden="true"></span>
+      <div class="tl-card">
+        <span class="tl-date">2026.11</span>
+        <h3>MapForZZ7Z · 一座校园，两个视角</h3>
+        <p>把 0.05 米/像素的正射影像、倾斜摄影实景模型与激光点云放进同一套 UTM 49N 坐标系，做成可缩放、可量测、可漫游的网页地图与三维场景。瓦片按需加载，模型经 Draco 压缩，点云走八叉树 LOD；应用部署在 Cloudflare Pages，介绍页走 GitHub Pages。</p>
+      </div>
+    </li>
+    <li class="tl-item" style="--i:1">
+      <span class="tl-dot" aria-hidden="true"></span>
+      <div class="tl-card">
+        <span class="tl-date">2026.11</span>
+        <h3>郑州市第七高级中学 · 集控配置</h3>
+        <p>把 ClassIsland 的集控做成无需服务器的静态托管：22 个分发名、共享科目表与作息时间表、课表分片与限制策略全部由 GitHub 提供，客户端填入分发名就能加入，班级机器放一份预置配置即可。</p>
+      </div>
+    </li>
+    <li class="tl-item" style="--i:2">
+      <span class="tl-dot" aria-hidden="true"></span>
+      <div class="tl-card">
+        <span class="tl-date">2026.11</span>
+        <h3>RouteStudio · DJI 正射航线规划</h3>
+        <p>纯前端的航线规划器：在卫星底图上点选区域边界，按相机幅宽与重叠率自动布设航线，航向、行距、到点动作与机头朝向都能调，导出 DJI WPML KMZ，深色模式与浅色模式随系统切换。</p>
+      </div>
+    </li>
+    <li class="tl-item" style="--i:3">
+      <span class="tl-dot" aria-hidden="true"></span>
+      <div class="tl-card">
+        <span class="tl-date">2026.10</span>
+        <h3>Vchange · Windows 多媒体四合一</h3>
+        <p>视频转换、图片转换、延时合成与图片堆砌集于一个 exe：内嵌 .NET 8 与完整 ffmpeg，向导式操作，21 种视频格式、GPU 硬件加速与 HDR 色彩空间，下载即用、无需安装，开源且免费。</p>
+      </div>
+    </li>
+    <li class="tl-item" style="--i:4">
+      <span class="tl-dot" aria-hidden="true"></span>
+      <div class="tl-card">
+        <span class="tl-date">2026.10</span>
+        <h3>个人主页 · 就是你现在看到的这一页</h3>
+        <p>纯静态、无构建工具，GitHub Pages 托管。写它的过程也是一次整理：把常用的滚动渐入、数字滚动与响应式断点沉淀成可复用的样式与脚本。</p>
+      </div>
+    </li>
+    <li class="tl-item" style="--i:5">
+      <span class="tl-dot" aria-hidden="true"></span>
+      <div class="tl-card">
+        <span class="tl-date">2025.10</span>
+        <h3>多参数环境监测仪 · Arduino</h3>
+        <p>硬件小实验：DHT22 采集温湿度，I²C 液晶实时显示，电路图与上传程序一并开源，照着连线就能复现，也顺便理解了「先接线，再写代码」。</p>
+      </div>
+    </li>
+    <li class="tl-item" style="--i:6">
+      <span class="tl-dot" aria-hidden="true"></span>
+      <div class="tl-card">
+        <span class="tl-date">2025.10</span>
+        <h3>GK-2A 云图抓取脚本 · 起点</h3>
+        <p>第一个被真正用起来的工具：仅依赖 requests，抓取 GK-2A 红外增强与全彩云图，也支持风云四号 B 星全盘彩色云图，一条命令就能部署到服务器长期运行。</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- 技术栈 -->
+<section class="tech" id="tech">
+  <div class="section-glow section-glow-alt" aria-hidden="true"></div>
+  <div class="section-head reveal">
+    <p class="kicker">工具箱</p>
+    <h2>工具箱里都装了些什么。</h2>
+    <p class="section-sub">前端、三维、地理、脚本、部署——各用各擅长的那一个。</p>
+  </div>
+  <div class="tech-groups">
+    <div class="tech-group reveal">
+      <h3>前端与界面</h3>
+      <div class="tech-tags">
+        <span class="tech-tag" style="--i:0">TypeScript</span>
+        <span class="tech-tag" style="--i:1">React 19</span>
+        <span class="tech-tag" style="--i:2">Vite</span>
+        <span class="tech-tag" style="--i:3">Leaflet</span>
+        <span class="tech-tag" style="--i:4">MapLibre GL JS</span>
+        <span class="tech-tag" style="--i:5">WPF</span>
+        <span class="tech-tag" style="--i:6">原生 CSS</span>
+      </div>
+    </div>
+    <div class="tech-group reveal">
+      <h3>三维与图形</h3>
+      <div class="tech-tags">
+        <span class="tech-tag" style="--i:0">Three.js</span>
+        <span class="tech-tag" style="--i:1">WebGL</span>
+        <span class="tech-tag" style="--i:2">Draco</span>
+        <span class="tech-tag" style="--i:3">glTF 2.0</span>
+        <span class="tech-tag" style="--i:4">八叉树 LOD</span>
+        <span class="tech-tag" style="--i:5">Pillow</span>
+      </div>
+    </div>
+    <div class="tech-group reveal">
+      <h3>地理与空间</h3>
+      <div class="tech-tags">
+        <span class="tech-tag" style="--i:0">GDAL</span>
+        <span class="tech-tag" style="--i:1">rasterio</span>
+        <span class="tech-tag" style="--i:2">pyproj</span>
+        <span class="tech-tag" style="--i:3">laspy</span>
+        <span class="tech-tag" style="--i:4">GeoTIFF</span>
+        <span class="tech-tag" style="--i:5">EPSG:32649</span>
+        <span class="tech-tag" style="--i:6">WebP 瓦片</span>
+      </div>
+    </div>
+    <div class="tech-group reveal">
+      <h3>脚本与后端</h3>
+      <div class="tech-tags">
+        <span class="tech-tag" style="--i:0">Python</span>
+        <span class="tech-tag" style="--i:1">requests</span>
+        <span class="tech-tag" style="--i:2">Node.js</span>
+        <span class="tech-tag" style="--i:3">ffmpeg</span>
+        <span class="tech-tag" style="--i:4">.NET 8</span>
+        <span class="tech-tag" style="--i:5">Linux</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 关于 -->
 <section class="about" id="about">
   <div class="section-head reveal">
+    <p class="kicker">关于</p>
     <h2>关于我</h2>
   </div>
   <div class="about-body reveal">
     <p>我是余浩轩（Andydot），一名高中生，也是一名独立开发者。我专注于使用AI Agent工具开发简单、好玩、实用的小工具，相信好的工具应当像空气一样——存在，却不打扰。我坚持干净的设计、扎实的工程和克制的功能取舍。</p>
     <p>该有的全都有，不该有的一样也没有。</p>
+  </div>
+</section>
+
+<!-- 联系 -->
+<section class="contact" id="contact">
+  <div class="section-glow section-glow-alt" aria-hidden="true"></div>
+  <div class="contact-inner">
+    <p class="kicker reveal">联系</p>
+    <h2 class="reveal">有想法？聊聊。</h2>
+    <p class="lede reveal">工具可以自己写，合作也可以一起写。欢迎来信，聊聊工具、聊聊项目，或者只是想提个建议——我基本都会回。</p>
+    <div class="contact-actions reveal">
+      <a class="btn btn-primary" href="mailto:andydot@qq.com">发送邮件</a>
+      <a class="btn btn-ghost" href="https://github.com/Andydot-ui" target="_blank" rel="noopener">GitHub ›</a>
+    </div>
+    <a class="contact-mail reveal" href="mailto:andydot@qq.com">andydot@qq.com</a>
   </div>
 </section>
 
@@ -195,13 +440,19 @@
         <a href="https://andydot-ui.github.io/GK-2A-Infrared-Cloud-Image-Automatic-Scraping-Script/" target="_blank" rel="noopener">GK-2A 云图抓取脚本</a>
       </div>
       <div class="footer-col">
+        <h4>更多</h4>
+        <a href="https://github.com/Andydot-ui/RouteStudio" target="_blank" rel="noopener">RouteStudio 航线规划</a>
+        <a href="https://github.com/Andydot-ui/classisland-mgmt" target="_blank" rel="noopener">classisland-mgmt 集控配置</a>
+        <a href="https://github.com/Andydot-ui/Multi-parameter-Environmental-Monitor-Based-on-Arduino" target="_blank" rel="noopener">多参数环境监测仪</a>
+      </div>
+      <div class="footer-col">
         <h4>找到我</h4>
         <a class="footer-social" href="https://github.com/Andydot-ui" target="_blank" rel="noopener">
           <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
           GitHub
         </a>
         <a class="footer-social" href="https://space.bilibili.com/1205310818" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/></svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386z"/></svg>
           哔哩哔哩
         </a>
         <a class="footer-social" href="https://www.qrz.com/db/BD6KGB" target="_blank" rel="noopener">
