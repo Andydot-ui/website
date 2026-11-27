@@ -107,14 +107,25 @@ img, svg { display: block; }
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.022em;
   color: #fff;
 }
-.nav-logo img {
-  border-radius: 6px;
+/* 圆形头像：图片本身已是带透明角的圆形 PNG，这里只补描边与过渡 */
+.nav-logo-img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.nav-logo:hover .nav-logo-img {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.34),
+    0 0 14px rgba(10, 132, 255, 0.35);
 }
 
 .nav-links {
